@@ -249,11 +249,11 @@ module.exports = NodeHelper.create({
 	    else if(this.config.vcgencmd =='xrandr'){
                 device.handler = function(action) {     
                     if(action === 1){
-                        exec("xrandr --output HDMI-1 --auto", opts, (error, stdout, stderr) => {
+                        exec("xrandr --output default --auto", opts, (error, stdout, stderr) => {
                             _this.checkForExecError(error, stdout, stderr); 
                         });
                     }if(action === 0){
-                        exec("xrandr --output HDMI-1 --off", opts, (error, stdout, stderr) => {
+                        exec("xrandr --output default --off", opts, (error, stdout, stderr) => {
                             _this.checkForExecError(error, stdout, stderr); 
                         });
                     }
