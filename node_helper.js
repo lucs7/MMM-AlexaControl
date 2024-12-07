@@ -295,11 +295,11 @@ module.exports = NodeHelper.create({
             else if(this.config.vcgencmd =='file'){
                 device.handler = function(action) {     
                     if(action === 1){
-                        exec("touch /tmp/screen-ctrl/off", opts, (error, stdout, stderr) => {
+                        exec("rm /tmp/screen-ctrl/off", opts, (error, stdout, stderr) => {
                             _this.checkForExecError(error, stdout, stderr); 
                         });
                     }if(action === 0){
-                        exec("rm /tmp/screen-ctrl/off", opts, (error, stdout, stderr) => {
+                        exec("touch /tmp/screen-ctrl/off", opts, (error, stdout, stderr) => {
                             _this.checkForExecError(error, stdout, stderr); 
                         });
                     }
